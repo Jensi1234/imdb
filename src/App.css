@@ -1,11 +1,5 @@
 
 
-/* h1{
-  background-color: rgb(146, 200, 244);
-  margin:1%
-  
-} */
-
 .my-heading {
   margin: 10px; 
   /* background-color: rgb(146, 200, 244); */
@@ -18,26 +12,11 @@
 
 .App {
   text-align: center;
-  
+
 }
 
 .App-logo {
-  height: 10vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@@ -24,10 +41,12 @@
   justify-content: center;
   font-size: calc(5px + 1vmin);
   color: white;
@@ -50,37 +29,19 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#m{
-  border: 1px;
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.movie{
-  padding :1em;
-  /* border: 1px solid black; */
-  align-items: center;
+@@ -56,21 +75,163 @@
 }
 
 .grid{
   /* max-width: 50rem; */
+  /* max-width: 50rem; */
   display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
   grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
   gap: 0.5rem;
   align-items: center;
   font-family:'Times New Roman', Times, serif;
+ 
   font-size: larger;
   border: 2px;
   background-image: url('./bg.jpg');
@@ -89,12 +50,14 @@
   background-position: center;
   color: white;
 
-  
+
 }
 
 
 
 .movie-poster {
+  width: 100px;
+  height: 200px;
   width: 300px;
   height: 450px;
 }
@@ -116,7 +79,7 @@
   font-size:larger;
   align-items: center;
   text-align: centers;
-  
+
 }
 
 .back-button {
@@ -130,13 +93,13 @@
   margin-left: 80px;
   margin-top: 10px;
   margin-bottom: 100px;
- 
+
 
 }
 
 .back-button:hover {
   background-color: #ddd;
-  
+
 }
 .selected-movie{
   background-color: #000205;
@@ -147,8 +110,8 @@
   background-size: cover;
   background-position: center;
   color: white;
-  
-  
+
+
 }
 
 .Home{
@@ -169,7 +132,7 @@ h2{
 }
 h3{
   margin-left: 30px;
-  
+
 }
 img{
   margin-top: 20px;
@@ -208,7 +171,7 @@ img{
 /* Styles for website view (larger screens) */
 @media screen and (min-width: 768px) {
   .grid {
-    max-width: 50rem;
+    /* max-width: 50rem; */
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -225,13 +188,16 @@ img{
   .grid {
     /* max-width: 100%; */
     grid-template-columns: repeat(1, 1fr);
+    text-size-adjust: 50;
+   
   }
 
+  
   .movie-poster {
-    width: 400px;
-    height:550px;
+    margin: 50px;
+
+    width: 650px;
+    height:850px;
     align-items: center;
   }
-
-  /* Add any other mobile-specific styles here */
 }
