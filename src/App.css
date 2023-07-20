@@ -1,166 +1,28 @@
 
 
-.my-heading {
-  margin: 10px; 
-  /* background-color: rgb(146, 200, 244); */
-  color: rgb(255, 255, 255);
-  border: #282c34;
-  padding: 15px;
-  background-color: #073d48;
-  text-align: center;
-}
-
 .App {
   text-align: center;
-
 }
 
 .App-logo {
-@@ -24,10 +41,12 @@
-  justify-content: center;
-  font-size: calc(5px + 1vmin);
-  color: white;
-
+  height: 10vmin;
+  pointer-events: none;
 }
 
-.App-link {
-  color: #61dafb;
-
-}
-
-@keyframes App-logo-spin {
-@@ -56,21 +75,163 @@
-}
-
-.grid{
-  /* max-width: 50rem; */
-  /* max-width: 50rem; */
-  display: grid;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
-  gap: 0.5rem;
-  align-items: center;
-  font-family:'Times New Roman', Times, serif;
- 
-  font-size: larger;
-  border: 2px;
-  background-image: url('./bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
-
-
-}
-
-
-
-.movie-poster {
-  width: 100px;
-  height: 200px;
-  width: 300px;
-  height: 450px;
-}
-.App {
-  background-color: black;
-  color: white;
-  font-family: sans-serif;
-
-}
-
-/* .movie-poster {
-  width: 150px;
-  height: 225px;
-  object-fit: cover;
-  margin: 0 auto;
-} */
-
-#text{
-  font-size:larger;
-  align-items: center;
-  text-align: centers;
-
-}
-
-.back-button {
-  padding: 8px 16px;
-  background-color: #bbe8fd;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: large;
-  margin-left: 80px;
-  margin-top: 10px;
-  margin-bottom: 100px;
-
-
-}
-
-.back-button:hover {
-  background-color: #ddd;
-
-}
-.selected-movie{
-  background-color: #000205;
-  color: rgb(11, 52, 88);
-  /* margin-left: 10px; */
-  background-image: url('./bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
-
-
-}
-
-.Home{
-  background-color: #282c34;
-}
-
-.MovieDetails{
-  background-image: url('./bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-h2{
-  margin-left: 30px;
-
-}
-h3{
-  margin-left: 30px;
-
-}
-img{
-  margin-top: 20px;
-  margin-left: 20px
-}
-
-
-/* Common styles for both website and mobile views */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.App {
-  text-align: center;
-  font-family: sans-serif;
-  color: white;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(5px + 1vmin);
-  background-color: #282c34;
   color: white;
 }
 
@@ -168,36 +30,46 @@ img{
   color: #61dafb;
 }
 
-/* Styles for website view (larger screens) */
-@media screen and (min-width: 768px) {
-  .grid {
-    /* max-width: 50rem; */
-    grid-template-columns: repeat(4, 1fr);
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .movie-poster {
-    width: 300px;
-    height: 450px;
+  to {
+    transform: rotate(360deg);
   }
-
-  /* Add any other website-specific styles here */
 }
 
-/* Styles for mobile view (smaller screens) */
-@media screen and (max-width: 800px) {
-  .grid {
-    /* max-width: 100%; */
-    grid-template-columns: repeat(1, 1fr);
-    text-size-adjust: 50;
-   
-  }
+#m{
+  border: 1px;
+}
 
-  
-  .movie-poster {
-    margin: 50px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    width: 650px;
-    height:850px;
-    align-items: center;
-  }
+.movie{
+  padding :1em;
+  /* border: 1px solid black; */
+  align-items: center;
+}
+
+.grid{
+  max-width: 50rem;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
+  gap: 0.5rem;
+  align-items: center;
+  font-family:'Times New Roman', Times, serif
+}
+
+.movie-poster {
+  width: 100px;
+  height: 200px;
+}
+.App {
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
 }
