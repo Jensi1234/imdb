@@ -1,4 +1,5 @@
 
+
 .my-heading {
   margin: 10px; 
   /* background-color: rgb(146, 200, 244); */
@@ -138,3 +139,65 @@ img{
   margin-left: 20px
 }
 
+
+/* Common styles for both website and mobile views */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 1vmin);
+  background-color: #282c34;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Styles for website view (larger screens) */
+@media screen and (min-width: 768px) {
+  .grid {
+    /* max-width: 50rem; */
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .movie-poster {
+    width: 300px;
+    height: 450px;
+  }
+
+  /* Add any other website-specific styles here */
+}
+
+/* Styles for mobile view (smaller screens) */
+@media screen and (max-width: 800px) {
+  .grid {
+    /* max-width: 100%; */
+    grid-template-columns: repeat(1, 1fr);
+    text-size-adjust: 50;
+   
+  }
+
+  
+  .movie-poster {
+    margin: 50px;
+
+    width: 650px;
+    height:850px;
+    align-items: center;
+  }
+}
