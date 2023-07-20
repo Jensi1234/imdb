@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 function App() {
   const [myData, setMyData] = useState([]);
@@ -21,12 +21,10 @@ function App() {
     setButtonClicked(true);
   };
 
-  
-
   return (
     <Router>
       <div>
-        <h1>MovieList</h1>
+        <h1 className='my-heading'>MovieList</h1>
         <Routes>
           <Route path="/" element={<Home myData={myData} />} />
           {myData.map((post) => {
@@ -36,13 +34,9 @@ function App() {
                 key={imdbID}
                 path={`/movie/${imdbID}`}
                 element={<MovieDetails imdbID={imdbID} myData={myData} />}
-                
               />
-              
             );
-            
           })}
-          
         </Routes>
       </div>
     </Router>
@@ -63,9 +57,10 @@ function Home({ myData }) {
                   alt="Movie Poster"
                   className="movie-poster"
                 />
-               
               </Link>
-              <p>{Title}</p>
+              <h3>
+                <p id="text">{Title}</p>
+              </h3>
             </div>
           </div>
         );
@@ -76,6 +71,7 @@ function Home({ myData }) {
 
 function MovieDetails({ imdbID, myData }) {
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const movie = myData.find((movie) => movie.imdbID === imdbID);
@@ -86,14 +82,18 @@ function MovieDetails({ imdbID, myData }) {
     return <div>Loading...</div>;
   }
 
+  const handleBackClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
     <div className="selected-movie">
-       <img src={selectedMovie.Poster} alt="Movie Poster" />
+      <img src={selectedMovie.Poster} alt="Movie Poster" />
       <h2>Selected Movie: {selectedMovie.Title}</h2>
-      <p>Type: {selectedMovie.Type}</p>
-      <p>Year: {selectedMovie.Year}</p>
-      <p>Id: {selectedMovie.imdbID}</p>
-     
+      <h3><p>Type: {selectedMovie.Type}</p></h3>
+      <h3><p>Year: {selectedMovie.Year}</p></h3>
+      <h3><p>Id: {selectedMovie.imdbID}</p></h3>
+      <button className="back-button" onClick={handleBackClick}>Back</button>
     </div>
   );
 }
